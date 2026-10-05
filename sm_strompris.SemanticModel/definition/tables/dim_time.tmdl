@@ -1,0 +1,55 @@
+table dim_time
+	lineageTag: aa35e593-ee37-494a-be5c-4678f971a6aa
+	sourceLineageTag: [gold].[dim_time]
+
+	column time
+		dataType: int64
+		formatString: 0
+		lineageTag: a0bbb671-31ba-45a1-8f09-a7c84f66de31
+		sourceLineageTag: time
+		summarizeBy: none
+		sourceColumn: time
+
+		annotation SummarizationSetBy = Automatic
+
+	column time_tekst
+		dataType: string
+		lineageTag: 9acf6079-049e-4a57-8b17-48f9ca444780
+		sourceLineageTag: time_tekst
+		summarizeBy: none
+		sourceColumn: time_tekst
+
+		annotation SummarizationSetBy = Automatic
+
+	column tidsrom
+		dataType: string
+		lineageTag: aa03676a-e608-46aa-a380-b317ab6418e8
+		sourceLineageTag: tidsrom
+		summarizeBy: none
+		sourceColumn: tidsrom
+		sortByColumn: tidsrom_sort
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column tidsrom_sort
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 8c2d4b77-a7a4-4144-b177-9b89e5193048
+		sourceLineageTag: tidsrom_sort
+		summarizeBy: none
+		sourceColumn: tidsrom_sort
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_time = entity
+		mode: directLake
+		source
+			entityName: dim_time
+			schemaName: gold
+			expressionSource: 'DirectLake - lh_strompris'
+

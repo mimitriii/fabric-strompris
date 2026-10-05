@@ -1,0 +1,12 @@
+relationship 16cb40df-d3f4-4d9d-33e8-c52bf1ccda30
+	fromColumn: fakt_strompris_time.prisomrade
+	toColumn: dim_prisomrade.prisomrade
+
+relationship f7b553f8-34c4-3f22-96bf-df2733dc6a9a
+	fromColumn: fakt_strompris_time.dato
+	toColumn: dim_dato.dato
+
+relationship 5ddc4ad6-767c-22f4-eb2a-1f85cc75c1ed
+	fromColumn: fakt_strompris_time.time
+	toColumn: dim_time.time
+

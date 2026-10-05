@@ -1,0 +1,262 @@
+table fakt_strompris_time
+	lineageTag: 2e4b6a9e-750c-47e9-b3a0-5e976ece7abc
+	sourceLineageTag: [gold].[fakt_strompris_time]
+
+	/// mål
+	/// 
+	measure 'Snittpris øre' = AVERAGE ( fakt_strompris_time[ore_per_kwh] )
+		formatString: "kr"\ #,0.###############;-"kr"\ #,0.###############;"kr"\ #,0.###############
+		displayFolder: mål
+		lineageTag: e5f99eb2-c6ff-48e8-b131-a66e0cf402ec
+
+		changedProperty = Name
+
+		changedProperty = Description
+
+		changedProperty = DisplayFolder
+
+		annotation PBI_FormatHint = {"currencyCulture":"no"}
+
+	/// mål
+	/// 
+	measure 'Høyeste pris øre' = MAX ( fakt_strompris_time[ore_per_kwh] )
+		formatString: "kr"\ #,0.###############;-"kr"\ #,0.###############;"kr"\ #,0.###############
+		displayFolder: mål
+		lineageTag: 9df8bb5c-8fba-4058-b8ae-13a65497cb98
+
+		changedProperty = Name
+
+		changedProperty = Description
+
+		changedProperty = DisplayFolder
+
+		annotation PBI_FormatHint = {"currencyCulture":"no"}
+
+	/// mål
+	/// 
+	measure 'Laveste pris øre' = MIN ( fakt_strompris_time[ore_per_kwh] )
+		formatString: "kr"\ #,0.###############;-"kr"\ #,0.###############;"kr"\ #,0.###############
+		displayFolder: mål
+		lineageTag: 6367535b-72e4-4638-a035-02d50319c0db
+
+		changedProperty = Name
+
+		changedProperty = Description
+
+		changedProperty = DisplayFolder
+
+		annotation PBI_FormatHint = {"currencyCulture":"no"}
+
+	/// mål
+	/// 
+	measure 'Antall timer' = COUNTROWS ( fakt_strompris_time )
+		formatString: 0
+		displayFolder: mål
+		lineageTag: 3447d7ca-5a22-489a-b499-3539831d2c7a
+
+		changedProperty = Name
+
+		changedProperty = Description
+
+		changedProperty = DisplayFolder
+
+	/// mål
+	/// 
+	measure 'Timer med negativ pris' =
+			
+			CALCULATE ( [Antall timer], fakt_strompris_time[nok_per_kwh] < 0 )
+		formatString: 0
+		displayFolder: mål
+		lineageTag: 8300883b-2389-4b2a-a1f7-843573ddec7d
+
+		changedProperty = Name
+
+		changedProperty = Description
+
+		changedProperty = DisplayFolder
+
+	/// mål
+	/// 
+	measure 'Andel negative timer' = DIVIDE ( [Timer med negativ pris], [Antall timer] )
+		displayFolder: mål
+		lineageTag: 1857af7f-1396-48fb-af0e-7ab62c87e539
+
+		changedProperty = Name
+
+		changedProperty = Description
+
+		changedProperty = DisplayFolder
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// mål
+	/// 
+	measure 'Snittpris forrige måned' =
+			
+			CALCULATE ( [Snittpris øre], DATEADD ( dim_dato[dato], -1, MONTH ) )
+		formatString: "kr"\ #,0.###############;-"kr"\ #,0.###############;"kr"\ #,0.###############
+		displayFolder: mål
+		lineageTag: 6bb947f4-09de-4da0-8eee-a66f8cc103b4
+
+		changedProperty = Name
+
+		changedProperty = Description
+
+		changedProperty = DisplayFolder
+
+		annotation PBI_FormatHint = {"currencyCulture":"no"}
+
+	/// mål
+	/// 
+	measure 'Endring mot forrige måned' =
+			
+			DIVIDE ( [Snittpris øre] - [Snittpris forrige måned], [Snittpris forrige måned] )
+		displayFolder: mål
+		lineageTag: 25befa09-ae49-48e8-a4fa-abe7f938cd1b
+
+		changedProperty = Name
+
+		changedProperty = Description
+
+		changedProperty = DisplayFolder
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// mål
+	/// 
+	measure 'Dyreste time' =
+			
+			VAR topp = TOPN ( 1, VALUES ( dim_time[time_tekst] ), [Snittpris øre], DESC )
+			RETURN CONCATENATEX ( topp, dim_time[time_tekst], ", " )
+		displayFolder: mål
+		lineageTag: 5e0bba05-c2bc-411c-8eb7-b733eb5b7569
+
+		changedProperty = Name
+
+		changedProperty = Description
+
+		changedProperty = DisplayFolder
+
+	/// mål
+	/// 
+	measure 'Billigste time'
+		displayFolder: mål
+		lineageTag: fe872903-60f8-43ab-abf5-93e7f932fc93
+
+		changedProperty = Name
+
+		changedProperty = Description
+
+		changedProperty = DisplayFolder
+
+	column prisomrade
+		dataType: string
+		isHidden
+		lineageTag: a8b50588-341f-47e0-ad3f-565f4e29ff32
+		sourceLineageTag: prisomrade
+		summarizeBy: none
+		sourceColumn: prisomrade
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column dato
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: 7f4b174f-8ad0-4ea0-bcfb-14bec8036804
+		sourceLineageTag: dato
+		summarizeBy: none
+		sourceColumn: dato
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column time
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 02fea968-3c8d-4aa5-959a-bc8d79b1462f
+		sourceLineageTag: time
+		summarizeBy: none
+		sourceColumn: time
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column tid_start_lokal
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: da0898d9-e722-4ad4-8028-57076a4b0c55
+		sourceLineageTag: tid_start_lokal
+		summarizeBy: none
+		sourceColumn: tid_start_lokal
+
+		annotation SummarizationSetBy = Automatic
+
+	column tid_start_utc
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 9bdfe338-2dad-493c-a3e5-f38d5d00a8ec
+		sourceLineageTag: tid_start_utc
+		summarizeBy: none
+		sourceColumn: tid_start_utc
+
+		annotation SummarizationSetBy = Automatic
+
+	column nok_per_kwh
+		dataType: double
+		lineageTag: dca9f3d5-12b1-4812-ab9c-2ba01c78d3e5
+		sourceLineageTag: nok_per_kwh
+		summarizeBy: sum
+		sourceColumn: nok_per_kwh
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column eur_per_kwh
+		dataType: double
+		lineageTag: 2a57e054-6324-4b79-add1-0397132ccfc8
+		sourceLineageTag: eur_per_kwh
+		summarizeBy: sum
+		sourceColumn: eur_per_kwh
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column eur_nok_kurs
+		dataType: decimal
+		formatString: "kr"\ #,0.###############;-"kr"\ #,0.###############;"kr"\ #,0.###############
+		lineageTag: bdf1c5a7-655d-425d-af86-568ed411dd5f
+		sourceLineageTag: eur_nok_kurs
+		summarizeBy: sum
+		sourceColumn: eur_nok_kurs
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"no"}
+
+	column ore_per_kwh
+		dataType: decimal
+		formatString: "kr"\ #,0.###############;-"kr"\ #,0.###############;"kr"\ #,0.###############
+		lineageTag: a4fd3454-415b-4c4f-ac54-505062a2b198
+		sourceLineageTag: ore_per_kwh
+		summarizeBy: sum
+		sourceColumn: ore_per_kwh
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"no"}
+
+	partition fakt_strompris_time = entity
+		mode: directLake
+		source
+			entityName: fakt_strompris_time
+			schemaName: gold
+			expressionSource: 'DirectLake - lh_strompris'
+

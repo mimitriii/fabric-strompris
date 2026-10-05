@@ -1,0 +1,11 @@
+expression 'DirectLake - lh_strompris' =
+		let
+		    Source = AzureStorage.DataLake("https://onelake.dfs.fabric.microsoft.com/1ab56f10-6650-48e8-8f0f-1b8312f267d8/bf8bcd60-5823-465a-95b1-686ab37040d8", [HierarchicalNavigation=true])
+		in
+		    Source
+	lineageTag: 0a85730e-5475-4452-be8b-324e03569f83
+
+	annotation PBI_IncludeFutureArtifacts = False
+
+	annotation PBI_RemovedChildren = [{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"[silver].[strompris_time]"}},"objectType":"Table"}]
+

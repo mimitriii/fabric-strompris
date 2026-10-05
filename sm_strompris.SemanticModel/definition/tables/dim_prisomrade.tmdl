@@ -1,0 +1,45 @@
+table dim_prisomrade
+	lineageTag: ac5f9dc4-d76e-41ce-9cbb-77ae20f898f7
+	sourceLineageTag: [gold].[dim_prisomrade]
+
+	column prisomrade
+		dataType: string
+		lineageTag: 41c9fd3e-3160-4ce3-91d1-7e03377e021d
+		sourceLineageTag: prisomrade
+		summarizeBy: none
+		sourceColumn: prisomrade
+
+		annotation SummarizationSetBy = Automatic
+
+	column omradenavn
+		dataType: string
+		lineageTag: 9c64c6e4-7476-4427-aed0-743013fdb4af
+		sourceLineageTag: omradenavn
+		summarizeBy: none
+		sourceColumn: omradenavn
+		sortByColumn: sortering
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column sortering
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 3b5ee5ce-4972-49c1-8a90-26ff47080401
+		sourceLineageTag: sortering
+		summarizeBy: none
+		sourceColumn: sortering
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_prisomrade = entity
+		mode: directLake
+		source
+			entityName: dim_prisomrade
+			schemaName: gold
+			expressionSource: 'DirectLake - lh_strompris'
+

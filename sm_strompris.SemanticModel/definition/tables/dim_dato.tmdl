@@ -1,0 +1,121 @@
+table dim_dato
+	lineageTag: 237bbb96-d918-46dc-9cd9-afff72357923
+	sourceLineageTag: [gold].[dim_dato]
+	dataCategory: Time
+
+	column dato
+		dataType: dateTime
+		isKey
+		formatString: General Date
+		lineageTag: 0f9e8c0a-bf7e-4451-bece-0422828af410
+		sourceLineageTag: dato
+		summarizeBy: none
+		sourceColumn: dato
+
+		annotation SummarizationSetBy = Automatic
+
+	column aar
+		dataType: int64
+		formatString: 0
+		lineageTag: e17aecf9-dc9c-4f59-85c4-c3a08de6a61d
+		sourceLineageTag: aar
+		summarizeBy: none
+		sourceColumn: aar
+
+		annotation SummarizationSetBy = Automatic
+
+	column kvartal
+		dataType: string
+		lineageTag: 561ee80c-b8ce-4750-b281-0ff62ef6586f
+		sourceLineageTag: kvartal
+		summarizeBy: none
+		sourceColumn: kvartal
+
+		annotation SummarizationSetBy = Automatic
+
+	column maaned_nr
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 2041b40b-2657-4f81-bece-1500b3bf1f2a
+		sourceLineageTag: maaned_nr
+		summarizeBy: none
+		sourceColumn: maaned_nr
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column maaned
+		dataType: string
+		lineageTag: 5c50184e-f895-4fab-94c4-ac6e1190ac7c
+		sourceLineageTag: maaned
+		summarizeBy: none
+		sourceColumn: maaned
+		sortByColumn: maaned_nr
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column aar_maaned
+		dataType: string
+		lineageTag: bfdebb36-1145-47ef-85e8-3fcdc7a6ec92
+		sourceLineageTag: aar_maaned
+		summarizeBy: none
+		sourceColumn: aar_maaned
+
+		annotation SummarizationSetBy = Automatic
+
+	column uke
+		dataType: int64
+		formatString: 0
+		lineageTag: 0e3f08f1-b691-462e-b645-bbe19d5e3fb5
+		sourceLineageTag: uke
+		summarizeBy: none
+		sourceColumn: uke
+
+		annotation SummarizationSetBy = Automatic
+
+	column ukedag_nr
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: beb8046f-3e8d-4f9e-9110-7741d055b30a
+		sourceLineageTag: ukedag_nr
+		summarizeBy: none
+		sourceColumn: ukedag_nr
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ukedag
+		dataType: string
+		lineageTag: a017855f-129a-4d4e-8a83-412b4399eb0b
+		sourceLineageTag: ukedag
+		summarizeBy: none
+		sourceColumn: ukedag
+		sortByColumn: ukedag_nr
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column er_helg
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: ae4c30ca-d37c-4964-a825-59e767835951
+		sourceLineageTag: er_helg
+		summarizeBy: none
+		sourceColumn: er_helg
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_dato = entity
+		mode: directLake
+		source
+			entityName: dim_dato
+			schemaName: gold
+			expressionSource: 'DirectLake - lh_strompris'
+
