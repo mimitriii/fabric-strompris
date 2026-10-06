@@ -1,0 +1,144 @@
+{
+  "config": "{\"version\":\"5.75\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY26SU07\",\"type\":2,\"version\":{\"visual\":\"2.11.0\",\"report\":\"3.4.0\",\"page\":\"2.3.1\"}}},\"activeSectionIndex\":1,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":0,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"useEnhancedTooltips\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY26SU07",
+            "path": "BaseThemes/CY26SU07.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{\"objects\":{\"outspacePane\":[{\"properties\":{\"width\":{\"expr\":{\"Literal\":{\"Value\":\"346L\"}}}}}]}}",
+      "displayName": "Oversikt",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "13be7fc0f824aceddb39",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"612559129757f37d0825\",\"layouts\":[{\"id\":0,\"position\":{\"x\":10.491803278688524,\"y\":0,\"z\":0,\"width\":499.1100702576112,\"height\":280.28103044496487,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Strømpris i Norge - per prisområde\",\"textStyle\":{\"fontSize\":\"20pt\"}}]}]}}]}}}",
+          "filters": "[]",
+          "height": 280.28,
+          "width": 499.11,
+          "x": 10.49,
+          "y": 0.00,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"7b1b074dcb013e8d6e1a\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":280.2985074626866,\"z\":2000,\"width\":1279.7014925373135,\"height\":440.5970149253731,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"dim_dato.dato\",\"active\":true}],\"Y\":[{\"queryRef\":\"fakt_strompris_time.Snittpris øre\"}],\"Series\":[{\"queryRef\":\"dim_prisomrade.omradenavn\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"fakt_strompris_time\",\"Type\":0},{\"Name\":\"d1\",\"Entity\":\"dim_prisomrade\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"dim_dato\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Snittpris øre\"},\"Name\":\"fakt_strompris_time.Snittpris øre\",\"NativeReferenceName\":\"Snittpris øre\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d1\"}},\"Property\":\"omradenavn\"},\"Name\":\"dim_prisomrade.omradenavn\",\"NativeReferenceName\":\"Prisområde\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"dato\"},\"Name\":\"dim_dato.dato\",\"NativeReferenceName\":\"Dato\"}]},\"columnProperties\":{\"dim_prisomrade.omradenavn\":{\"displayName\":\"Prisområde\"},\"dim_dato.dato\":{\"displayName\":\"Dato\"}},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Snittpris per dag (øre/kWh)'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 440.60,
+          "queryBinary": "H4sIAAAAAAAEAJ2TwU4CMRCGX8X03BCWeNqjgsYoBlnDxRDSbAet0nbT7RLIZh/Hd/DOiznTxXVZJCHeOu3/d77pTEt2bbUWRuYsfilZArj2Kn0qwG2HwovkTWSwl7C4ZOGAFjNwubKGxQPObpzVwf4oNLCYLRlnI7zGbykQH36Re5RkTuULr1DC2fM2Q2W/4o1JRm2XVHpBequdkCcMXb0U3raUc47lrCD1AW0MIi8cEPpokznIa3os2RYuhSksf4NQQlVxNnE2AxcSJEZ5T0QXuy+8Bg9/ij2ur9cRk9arNSUBByaFvfXozhK7sSq0OZcS36yDWb+XEWvTQjx8zF5Lc4psUqt3n/JfWF2q0JlDHtrq7Tv2N8MwmOZou1JGKvNKORBMi3oCb50tMtyuJxezvWOvkYviPh/MgzWB1Bp5hiOq9TTzU5BF2CcPbcyoekS65OzOeBx8aI4RzYB8UAYSobMVzVdFxTffI8JgtIG0IMcYvFNpfq/oM0UVZvwG1hoX1YADAAA=",
+          "width": 1279.70,
+          "x": 0.00,
+          "y": 280.30,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"9829080a4409ff14348b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1030.7462686567164,\"y\":256.1194029850746,\"z\":4000,\"width\":236.4179104477612,\"height\":103.88059701492537,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"dim_dato.dato\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dim_dato\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"dato\"},\"Name\":\"dim_dato.dato\",\"NativeReferenceName\":\"dato\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"dato\"}}}]},\"syncGroup\":{\"groupName\":\"dato\",\"fieldChanges\":true,\"filterChanges\":true},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Between'\"}}}}}],\"header\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Periode'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 103.88,
+          "queryBinary": "H4sIAAAAAAAEAMWST0vEMBDFv8ucFIq4q6fedO2KyC6rK16kSEjHGmmSMk2kpfS7O0m7VFmPgrfMn/d7DzI9rKzWwhQNpC897JHfTskHj9TdCCf276LGaQXSHuIgPJ6RGmUNpMsE1mR1lG+FRkihgAQyxrguFEq/FsJZ7j11NY/Phzxhowqli6KVrbw2gZm1NWEzYjmL9STxEd/mIrKHIYEd2Rpp5Ac2tw7ek93Z5LkVTn0GChIaiYetUdTDVVkSlrxjf0nwJ8m4t/ZGjg4Xc9CNMic/wp7+R6DLb4FEexQo5/G1MoUyZUDvSGkx/v8tWV9ze7wbNvnAiAz1IlnmUXpnZOULzHTtuijgqSOPyXw+C17LWpQ+iDfoSMnmXoVjWwzM+AIYtRaQoAIAAA==",
+          "width": 236.42,
+          "x": 1030.75,
+          "y": 256.12,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"c663327414754007b685\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1003.8805970149253,\"y\":0,\"z\":3000,\"width\":276,\"height\":246,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"dim_prisomrade.omradenavn\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dim_prisomrade\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"omradenavn\"},\"Name\":\"dim_prisomrade.omradenavn\",\"NativeReferenceName\":\"omradenavn\"}]},\"syncGroup\":{\"groupName\":\"omradenavn\",\"fieldChanges\":true,\"filterChanges\":true},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"general\":[{\"properties\":{\"orientation\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}}}}],\"header\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Prisområde'\"}}}}}]}}}",
+          "filters": "[{\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"dim_prisomrade\"}},\"Property\":\"omradenavn\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dim_prisomrade\",\"Type\":0}],\"Where\":[{\"Condition\":{\"And\":{\"Left\":{\"Not\":{\"Expression\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"omradenavn\"}},\"Right\":{\"Literal\":{\"Value\":\"null\"}}}}}},\"Right\":{\"Not\":{\"Expression\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"omradenavn\"}},\"Right\":{\"Literal\":{\"Value\":\"null\"}}}}}}}}}]},\"type\":\"Advanced\",\"howCreated\":0,\"isHiddenInViewMode\":false}]",
+          "height": 246.00,
+          "queryBinary": "H4sIAAAAAAAEANVTTU/DMAz9LzlXaINbbzAKQoxpbGg7oAlFqbcFNR9yk7Fq2n/HTjtW4MqFXBrHz++9OO5BjJwx0pa1yF8PYg60D1o9R8DmVgY530oPHUTkB5ESvFkA1tpZkV9m4g6dSeUTaUDkohSZKIgmNBxo8+ZR186gLIEyL40n0OC4ykiuAhVS6chV0VhmLvYeoW7JyZGLqGAG63OQFI7HTEzRecCk0rJbubOCEicf36QvehiGBL1jXkCwCrqKPg35W24p29mzpQ6dp+u2F2NYB/5OXPjtm3rmJWv/iB41Fw+yr+o/vDhlZnqzTbRjHQBllZ5KVpFrbawqAvHqAf+he1orQt+QGW03DJqiNrIdzHt00dNxO9Ck9U4jRq44HqxSIQ/2DMqoTg/KBwu+CQldZX22JWm4D9qlpj1YVcUSCuNDk3SINGCE7Pw7DAlW7EFF5n6CgFrVbdeG7PoTp6ahwXADAAA=",
+          "width": 276.00,
+          "x": 1003.88,
+          "y": 0.00,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"f2fda4852b386b7cce26\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":48.35820895522388,\"z\":1000,\"width\":987.7611940298507,\"height\":231.94029850746267,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"cardVisual\",\"projections\":{\"Data\":[{\"queryRef\":\"fakt_strompris_time.Snittpris øre\"},{\"queryRef\":\"fakt_strompris_time.Høyeste pris øre\"},{\"queryRef\":\"fakt_strompris_time.Laveste pris øre\"},{\"queryRef\":\"fakt_strompris_time.Timer med negativ pris\"},{\"queryRef\":\"fakt_strompris_time.Andel negative timer\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"fakt_strompris_time\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Snittpris øre\"},\"Name\":\"fakt_strompris_time.Snittpris øre\",\"NativeReferenceName\":\"Snittpris øre\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Høyeste pris øre\"},\"Name\":\"fakt_strompris_time.Høyeste pris øre\",\"NativeReferenceName\":\"Høyeste pris øre\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Laveste pris øre\"},\"Name\":\"fakt_strompris_time.Laveste pris øre\",\"NativeReferenceName\":\"Laveste pris øre\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Timer med negativ pris\"},\"Name\":\"fakt_strompris_time.Timer med negativ pris\",\"NativeReferenceName\":\"Negative timer\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Andel negative timer\"},\"Name\":\"fakt_strompris_time.Andel negative timer\",\"NativeReferenceName\":\"Andel negative timer\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Snittpris øre\"}}}]},\"autoSelectVisualType\":false,\"columnProperties\":{\"fakt_strompris_time.Timer med negativ pris\":{\"displayName\":\"Negative timer\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 231.94,
+          "queryBinary": "H4sIAAAAAAAEAK2UyW7CMBCGXyWas1UB7Sm3LrSVWhAtqJcKISsZqFviRGMHEaG8F3derGOHRSpJF9GbJ/6XLwfPCq7TJJE6NhC+rmCIfLYqesqRihtp5fBNZriVQLgCf+EOL0hGpRrCjoBbShNv78sEIYQpCOhyjC3cID/sxFiWZKTMxCqWCBgVGStb5Vhw5xwj6/09lCYndPndZUZoqgrmSnOK8Bmnh8H3lKWAAaUZku8aamWtqwk2a47hyx3RMcTZF7HTWrVwJUioI9xajzJPx7zfrAs0FoPfotYYmnBrs09HfpSLPxEf65uA65JP5x0xBAUJxoHGmev1+T9AN5iayPuVCANnpn/BvtQxznfth+DvoGstTcj1+WNuuFI6Vnrm8AakElm98jtK84w/V9uBQd/5qfIvubkl2qIjzsXF2AfsF0Kbh+4So9wJe2hJReZBufXRLln5Cd6S8MByBAAA",
+          "width": 987.76,
+          "x": 0.00,
+          "y": 48.36,
+          "z": 1000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Døgnmønster",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "99046dfce40879b428f6",
+      "ordinal": 1,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"22ffb76f6f066a3dffbf\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1003.75,\"y\":0,\"z\":0,\"width\":276,\"height\":246,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"dim_prisomrade.omradenavn\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dim_prisomrade\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"omradenavn\"},\"Name\":\"dim_prisomrade.omradenavn\",\"NativeReferenceName\":\"omradenavn\"}]},\"syncGroup\":{\"groupName\":\"omradenavn\",\"fieldChanges\":true,\"filterChanges\":true},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"general\":[{\"properties\":{\"orientation\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}}}}],\"header\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Prisområde'\"}}}}}]}}}",
+          "filters": "[{\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"dim_prisomrade\"}},\"Property\":\"omradenavn\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dim_prisomrade\",\"Type\":0}],\"Where\":[{\"Condition\":{\"And\":{\"Left\":{\"Not\":{\"Expression\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"omradenavn\"}},\"Right\":{\"Literal\":{\"Value\":\"null\"}}}}}},\"Right\":{\"Not\":{\"Expression\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"omradenavn\"}},\"Right\":{\"Literal\":{\"Value\":\"null\"}}}}}}}}}]},\"type\":\"Advanced\",\"howCreated\":0,\"isHiddenInViewMode\":false}]",
+          "height": 246.00,
+          "queryBinary": "H4sIAAAAAAAEANVTTU/DMAz9LzlXaINbbzAKQoxpbGg7oAlFqbcFNR9yk7Fq2n/HTjtW4MqFXBrHz++9OO5BjJwx0pa1yF8PYg60D1o9R8DmVgY530oPHUTkB5ESvFkA1tpZkV9m4g6dSeUTaUDkohSZKIgmNBxo8+ZR186gLIEyL40n0OC4ykiuAhVS6chV0VhmLvYeoW7JyZGLqGAG63OQFI7HTEzRecCk0rJbubOCEicf36QvehiGBL1jXkCwCrqKPg35W24p29mzpQ6dp+u2F2NYB/5OXPjtm3rmJWv/iB41Fw+yr+o/vDhlZnqzTbRjHQBllZ5KVpFrbawqAvHqAf+he1orQt+QGW03DJqiNrIdzHt00dNxO9Ck9U4jRq44HqxSIQ/2DMqoTg/KBwu+CQldZX22JWm4D9qlpj1YVcUSCuNDk3SINGCE7Pw7DAlW7EFF5n6CgFrVbdeG7PoTp6ahwXADAAA=",
+          "width": 276.00,
+          "x": 1003.75,
+          "y": 0.00,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"5062d79095fb1e3b28bb\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":495,\"z\":2002,\"width\":1107.7777777777778,\"height\":224.44444444444443,\"tabOrder\":2002}}],\"singleVisual\":{\"visualType\":\"pivotTable\",\"projections\":{\"Rows\":[{\"queryRef\":\"dim_dato.ukedag\",\"active\":true}],\"Columns\":[{\"queryRef\":\"dim_time.time_tekst\",\"active\":true}],\"Values\":[{\"queryRef\":\"fakt_strompris_time.Snittpris øre\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dim_dato\",\"Type\":0},{\"Name\":\"d1\",\"Entity\":\"dim_time\",\"Type\":0},{\"Name\":\"f\",\"Entity\":\"fakt_strompris_time\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"ukedag\"},\"Name\":\"dim_dato.ukedag\",\"NativeReferenceName\":\"Ukedag\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d1\"}},\"Property\":\"time_tekst\"},\"Name\":\"dim_time.time_tekst\",\"NativeReferenceName\":\"time_tekst\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Snittpris øre\"},\"Name\":\"fakt_strompris_time.Snittpris øre\",\"NativeReferenceName\":\"Snittpris øre\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"ukedag\"}}}]},\"columnProperties\":{\"dim_dato.ukedag\":{\"displayName\":\"Ukedag\"}},\"drillFilterOtherVisuals\":true,\"objects\":{\"values\":[{\"properties\":{\"backColor\":{\"solid\":{\"color\":{\"expr\":{\"FillRule\":{\"Input\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"fakt_strompris_time\"}},\"Property\":\"Snittpris øre\"}},\"FillRule\":{\"linearGradient3\":{\"min\":{\"color\":{\"Literal\":{\"Value\":\"'#3C8D08'\"}}},\"mid\":{\"color\":{\"Literal\":{\"Value\":\"'#F1F128'\"}}},\"max\":{\"color\":{\"Literal\":{\"Value\":\"'#E1400F'\"}}},\"nullColoringStrategy\":{\"strategy\":{\"Literal\":{\"Value\":\"'asZero'\"}}}}}}}}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"FillRule\":{\"Input\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"fakt_strompris_time\"}},\"Property\":\"Snittpris øre\"}},\"FillRule\":{\"linearGradient2\":{\"min\":{\"color\":{\"Literal\":{\"Value\":\"'#000000'\"}}},\"max\":{\"color\":{\"Literal\":{\"Value\":\"'#000000'\"}}},\"nullColoringStrategy\":{\"strategy\":{\"Literal\":{\"Value\":\"'asZero'\"}}}}}}}}}}},\"selector\":{\"data\":[{\"dataViewWildcard\":{\"matchingOption\":1}}],\"metadata\":\"fakt_strompris_time.Snittpris øre\"}},{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"8D\"}}}}}],\"columnHeaders\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"8D\"}}}}}],\"rowHeaders\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"8D\"}}}}}],\"grid\":[{\"properties\":{\"rowPadding\":{\"expr\":{\"Literal\":{\"Value\":\"3D\"}}}}}],\"subTotals\":[{\"properties\":{\"rowSubtotals\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"columnSubtotals\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"columnFormatting\":[{\"properties\":{\"styleTotal\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"labelPrecision\":{\"expr\":{\"Literal\":{\"Value\":\"0L\"}}}},\"selector\":{\"metadata\":\"fakt_strompris_time.Snittpris øre\"}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Snittpris per ukedag og time (øre/kWh)'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 224.44,
+          "queryBinary": "H4sIAAAAAAAEAK2UwU7DMAyGXwXlXE3ruO3GGHBAwNgGHNA0Ra1XwtakchPYVPW9uPNi2GnHRjSkIXFL8v92PtdxK3Fu8lzqtBT950pMgNZWJfcOcDOUVk5eZAGtRfQr4QVePAKWymjR70XiEk3uw29lDqIvUhGJC0pjN7xR+TyV1tDZdFOQ3K2jnTMOrVaRcMi62Hcu5NLOS0v3FqjKMGgWUSErSKyHOjcrl2tmvlgXCGWDTbUahwmMYbHbePa6jsQITQHor3JLSGUm6HDL3BbUaRUWrHrjTICgE2h9D9vAPyPEIQPXN7ewLG3AwUJnT/2N5UeCStyALB3CsUCLkGeilbX85U8+PyjNjulAXzqB+TfEMCc18Q5TwMHGd3GokBrqMeMooP6nDtf1jISB0qnSGYeMUOWyee5XaFxBx82YUPBrQ8P77swHTiAxOj3CH0e9JoIHbAypa+uq/MEjF0Ocp9H+/U9EZd6bYp2mhx13u3V46dQUoYMsZ1mGkEkL2xFvJqO3U1oueheKMWr/ROTaL2fciO9hj2v+9pA4jrkBiyoprxX/GmK2fgFyXDs3TgQAAA==",
+          "width": 1107.78,
+          "x": 0.00,
+          "y": 495.00,
+          "z": 2002.00
+        },
+        {
+          "config": "{\"name\":\"65aaa07249ac8ed673f6\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":155,\"z\":2000,\"width\":1013.3333333333334,\"height\":340.4255319148936,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"columnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"dim_time.time_tekst\",\"active\":true}],\"Y\":[{\"queryRef\":\"fakt_strompris_time.Snittpris øre\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dim_time\",\"Type\":0},{\"Name\":\"f\",\"Entity\":\"fakt_strompris_time\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"time_tekst\"},\"Name\":\"dim_time.time_tekst\",\"NativeReferenceName\":\"Klokkeslett\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Snittpris øre\"},\"Name\":\"fakt_strompris_time.Snittpris øre\",\"NativeReferenceName\":\"Snittpris øre\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"time_tekst\"}}}]},\"columnProperties\":{\"dim_time.time_tekst\":{\"displayName\":\"Klokkeslett\"}},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Snittpris per time i døgnet (øre/kWh)'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 340.43,
+          "queryBinary": "H4sIAAAAAAAEAK2STU/DMAyG/wrKOZpaxKnHfcBhGowNjQOapqh1IbRNqnwAVdX/xZ0/hp0WNlUgceAW57VfP7bcspmuKqEyy5KHlm0B306mtx5MMxdObJ9EDUMKS1oWBHrswFipFUvOObs0ugrl16IClrCMcbZAG9dQIKuDk/jP2V1Toxx1/DszP83MReEO1qFZbaQdF+050pWQutBppktfKQJZvNUGbM+CA2hvUthAfgwCUNdxtja6BhNakffBQWEdQ+ELeyCdnKgkOvlCjmBApTDkLktdFGBLcOTQshUI6w38FSgfA22VdI7GPvt4R5sj1A9LmYySf2Mce+IGb0wGZtqEFc6lwW0GzJiPqP9xvV23R3EqVSbVI5WtjaxEf0RXRvsav/vjQ4PnnojiiMf7UEpnuIHMD6xt+NgRIPa+4Kd+99hFv/YDeIWXEkdR1BHc97nGHc0KqSe3FTgjU7uUdNwxkX4CE8kUfRADAAA=",
+          "width": 1013.33,
+          "x": 0.00,
+          "y": 155.00,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"d3452d0c37a9916542e3\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1022.5,\"y\":246.25,\"z\":1000,\"width\":236.4179104477612,\"height\":103.88059701492537,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"dim_dato.dato\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dim_dato\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"dato\"},\"Name\":\"dim_dato.dato\",\"NativeReferenceName\":\"dato\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"dato\"}}}]},\"syncGroup\":{\"groupName\":\"dato\",\"fieldChanges\":true,\"filterChanges\":true},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Between'\"}}}}}],\"header\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Periode'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 103.88,
+          "queryBinary": "H4sIAAAAAAAEAMWST0vEMBDFv8ucFIq4q6fedO2KyC6rK16kSEjHGmmSMk2kpfS7O0m7VFmPgrfMn/d7DzI9rKzWwhQNpC897JHfTskHj9TdCCf276LGaQXSHuIgPJ6RGmUNpMsE1mR1lG+FRkihgAQyxrguFEq/FsJZ7j11NY/Phzxhowqli6KVrbw2gZm1NWEzYjmL9STxEd/mIrKHIYEd2Rpp5Ac2tw7ek93Z5LkVTn0GChIaiYetUdTDVVkSlrxjf0nwJ8m4t/ZGjg4Xc9CNMic/wp7+R6DLb4FEexQo5/G1MoUyZUDvSGkx/v8tWV9ze7wbNvnAiAz1IlnmUXpnZOULzHTtuijgqSOPyXw+C17LWpQ+iDfoSMnmXoVjWwzM+AIYtRaQoAIAAA==",
+          "width": 236.42,
+          "x": 1022.50,
+          "y": 246.25,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"e82280a33a2421d6c732\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":2001,\"width\":291.63120567375887,\"height\":149.7872340425532,\"tabOrder\":2001}}],\"singleVisual\":{\"visualType\":\"cardVisual\",\"projections\":{\"Data\":[{\"queryRef\":\"fakt_strompris_time.Dyreste time\"},{\"queryRef\":\"fakt_strompris_time.Billigste time\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"fakt_strompris_time\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Dyreste time\"},\"Name\":\"fakt_strompris_time.Dyreste time\",\"NativeReferenceName\":\"Dyreste time\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Billigste time\"},\"Name\":\"fakt_strompris_time.Billigste time\",\"NativeReferenceName\":\"Billigste time\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Dyreste time\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 149.79,
+          "queryBinary": "H4sIAAAAAAAEAKWSTUvDQBCG/4rMeZHGY4610YNUWiteJJRlO61jk+wyu5GGkP/u7KYqRgTB2072eT+SSQ/Xtq51s/OQP/ewQTkHMusWuVvooDcv2uEZgbyHdBEPT8iebAP5lYIbtnWS3+saIYc9KCjEJnRx0Mew9UEQx+S3gQRR8Ng5IWdDqSSzQhOSfonat4zRvzg5Rj9GSC/bssEH3H8NKWcYFKzYOuSUtehEE/AihcjVR5+fFS6/oZEM9BYDkLExeBZO/P5fcE5VRYc/VpzAv5WcepbiOqdmR80hllkx1Xrc2S3b1snjcddS61U+vLxAnGcqK5P0c7GZDMUJTRuRJQYm4+8o/gbZIOQ7kFFC+DoCAAA=",
+          "width": 291.63,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 2001.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}

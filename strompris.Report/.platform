@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "strompris"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "23530e31-20d3-9b3b-4e8d-38d673dae7d1"
+  }
+}

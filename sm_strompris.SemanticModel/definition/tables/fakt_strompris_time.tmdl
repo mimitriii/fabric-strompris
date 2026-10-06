@@ -2,10 +2,10 @@ table fakt_strompris_time
 	lineageTag: 2e4b6a9e-750c-47e9-b3a0-5e976ece7abc
 	sourceLineageTag: [gold].[fakt_strompris_time]
 
-	/// mål
+	/// Gjennomsnittlig timepris i øre per kWh
 	/// 
 	measure 'Snittpris øre' = AVERAGE ( fakt_strompris_time[ore_per_kwh] )
-		formatString: "kr"\ #,0.###############;-"kr"\ #,0.###############;"kr"\ #,0.###############
+		formatString: #,0.0 "øre"
 		displayFolder: mål
 		lineageTag: e5f99eb2-c6ff-48e8-b131-a66e0cf402ec
 
@@ -15,12 +15,14 @@ table fakt_strompris_time
 
 		changedProperty = DisplayFolder
 
-		annotation PBI_FormatHint = {"currencyCulture":"no"}
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isCustom":true}
 
 	/// mål
 	/// 
 	measure 'Høyeste pris øre' = MAX ( fakt_strompris_time[ore_per_kwh] )
-		formatString: "kr"\ #,0.###############;-"kr"\ #,0.###############;"kr"\ #,0.###############
+		formatString: #,0.0 "øre"
 		displayFolder: mål
 		lineageTag: 9df8bb5c-8fba-4058-b8ae-13a65497cb98
 
@@ -30,12 +32,14 @@ table fakt_strompris_time
 
 		changedProperty = DisplayFolder
 
-		annotation PBI_FormatHint = {"currencyCulture":"no"}
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isCustom":true}
 
 	/// mål
 	/// 
 	measure 'Laveste pris øre' = MIN ( fakt_strompris_time[ore_per_kwh] )
-		formatString: "kr"\ #,0.###############;-"kr"\ #,0.###############;"kr"\ #,0.###############
+		formatString: #,0.0 "øre"
 		displayFolder: mål
 		lineageTag: 6367535b-72e4-4638-a035-02d50319c0db
 
@@ -45,7 +49,9 @@ table fakt_strompris_time
 
 		changedProperty = DisplayFolder
 
-		annotation PBI_FormatHint = {"currencyCulture":"no"}
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isCustom":true}
 
 	/// mål
 	/// 
@@ -78,6 +84,7 @@ table fakt_strompris_time
 	/// mål
 	/// 
 	measure 'Andel negative timer' = DIVIDE ( [Timer med negativ pris], [Antall timer] )
+		formatString: 0.0\ %;-0.0\ %;0.0\ %
 		displayFolder: mål
 		lineageTag: 1857af7f-1396-48fb-af0e-7ab62c87e539
 
@@ -87,14 +94,14 @@ table fakt_strompris_time
 
 		changedProperty = DisplayFolder
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		changedProperty = FormatString
 
 	/// mål
 	/// 
 	measure 'Snittpris forrige måned' =
 			
 			CALCULATE ( [Snittpris øre], DATEADD ( dim_dato[dato], -1, MONTH ) )
-		formatString: "kr"\ #,0.###############;-"kr"\ #,0.###############;"kr"\ #,0.###############
+		formatString: #,0.0 "øre"
 		displayFolder: mål
 		lineageTag: 6bb947f4-09de-4da0-8eee-a66f8cc103b4
 
@@ -104,13 +111,16 @@ table fakt_strompris_time
 
 		changedProperty = DisplayFolder
 
-		annotation PBI_FormatHint = {"currencyCulture":"no"}
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isCustom":true}
 
 	/// mål
 	/// 
 	measure 'Endring mot forrige måned' =
 			
 			DIVIDE ( [Snittpris øre] - [Snittpris forrige måned], [Snittpris forrige måned] )
+		formatString: 0.0\ %;-0.0\ %;0.0\ %
 		displayFolder: mål
 		lineageTag: 25befa09-ae49-48e8-a4fa-abe7f938cd1b
 
@@ -120,13 +130,14 @@ table fakt_strompris_time
 
 		changedProperty = DisplayFolder
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		changedProperty = FormatString
 
 	/// mål
 	/// 
 	measure 'Dyreste time' =
 			
-			VAR topp = TOPN ( 1, VALUES ( dim_time[time_tekst] ), [Snittpris øre], DESC )
+			VAR timer = FILTER ( VALUES ( dim_time[time_tekst] ), NOT ISBLANK ( [Snittpris øre] ) )
+			VAR topp = TOPN ( 1, timer, [Snittpris øre], DESC )
 			RETURN CONCATENATEX ( topp, dim_time[time_tekst], ", " )
 		displayFolder: mål
 		lineageTag: 5e0bba05-c2bc-411c-8eb7-b733eb5b7569
@@ -139,7 +150,11 @@ table fakt_strompris_time
 
 	/// mål
 	/// 
-	measure 'Billigste time'
+	measure 'Billigste time' =
+			
+			VAR timer = FILTER ( VALUES ( dim_time[time_tekst] ), NOT ISBLANK ( [Snittpris øre] ) )
+			VAR bunn = TOPN ( 1, timer, [Snittpris øre], ASC )
+			RETURN CONCATENATEX ( bunn, dim_time[time_tekst], ", " )
 		displayFolder: mål
 		lineageTag: fe872903-60f8-43ab-abf5-93e7f932fc93
 
