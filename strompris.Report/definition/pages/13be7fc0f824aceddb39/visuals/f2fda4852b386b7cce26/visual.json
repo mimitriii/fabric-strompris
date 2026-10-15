@@ -1,0 +1,113 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "f2fda4852b386b7cce26",
+  "position": {
+    "x": 0,
+    "y": 48.35820895522388,
+    "z": 1000,
+    "height": 231.94029850746267,
+    "width": 987.76119402985069,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fakt_strompris_time"
+                    }
+                  },
+                  "Property": "Snittpris øre"
+                }
+              },
+              "queryRef": "fakt_strompris_time.Snittpris øre",
+              "nativeQueryRef": "Snittpris øre"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fakt_strompris_time"
+                    }
+                  },
+                  "Property": "Høyeste pris øre"
+                }
+              },
+              "queryRef": "fakt_strompris_time.Høyeste pris øre",
+              "nativeQueryRef": "Høyeste pris øre"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fakt_strompris_time"
+                    }
+                  },
+                  "Property": "Laveste pris øre"
+                }
+              },
+              "queryRef": "fakt_strompris_time.Laveste pris øre",
+              "nativeQueryRef": "Laveste pris øre"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fakt_strompris_time"
+                    }
+                  },
+                  "Property": "Timer med negativ pris"
+                }
+              },
+              "queryRef": "fakt_strompris_time.Timer med negativ pris",
+              "nativeQueryRef": "Negative timer",
+              "displayName": "Negative timer"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fakt_strompris_time"
+                    }
+                  },
+                  "Property": "Andel negative timer"
+                }
+              },
+              "queryRef": "fakt_strompris_time.Andel negative timer",
+              "nativeQueryRef": "Andel negative timer"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "fakt_strompris_time"
+                  }
+                },
+                "Property": "Snittpris øre"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "e82280a33a2421d6c732",
+  "position": {
+    "x": 0,
+    "y": 0,
+    "z": 3000,
+    "height": 149.78723404255319,
+    "width": 291.63120567375887,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fakt_strompris_time"
+                    }
+                  },
+                  "Property": "Dyreste time"
+                }
+              },
+              "queryRef": "fakt_strompris_time.Dyreste time",
+              "nativeQueryRef": "Dyreste time"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fakt_strompris_time"
+                    }
+                  },
+                  "Property": "Billigste time"
+                }
+              },
+              "queryRef": "fakt_strompris_time.Billigste time",
+              "nativeQueryRef": "Billigste time"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "fakt_strompris_time"
+                  }
+                },
+                "Property": "Dyreste time"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

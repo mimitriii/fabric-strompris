@@ -1,0 +1,92 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "7b1b074dcb013e8d6e1a",
+  "position": {
+    "x": 0,
+    "y": 280.29850746268659,
+    "z": 2000,
+    "height": 440.59701492537312,
+    "width": 1279.7014925373135,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "lineChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_dato"
+                    }
+                  },
+                  "Property": "dato"
+                }
+              },
+              "queryRef": "dim_dato.dato",
+              "nativeQueryRef": "Dato",
+              "active": true,
+              "displayName": "Dato"
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_prisomrade"
+                    }
+                  },
+                  "Property": "omradenavn"
+                }
+              },
+              "queryRef": "dim_prisomrade.omradenavn",
+              "nativeQueryRef": "Prisområde",
+              "displayName": "Prisområde"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fakt_strompris_time"
+                    }
+                  },
+                  "Property": "Snittpris øre"
+                }
+              },
+              "queryRef": "fakt_strompris_time.Snittpris øre",
+              "nativeQueryRef": "Snittpris øre"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Snittpris per dag (øre/kWh)'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "65aaa07249ac8ed673f6",
+  "position": {
+    "x": 0,
+    "y": 155,
+    "z": 2000,
+    "height": 340.42553191489361,
+    "width": 1013.3333333333334,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "columnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_time"
+                    }
+                  },
+                  "Property": "time_tekst"
+                }
+              },
+              "queryRef": "dim_time.time_tekst",
+              "nativeQueryRef": "Klokkeslett",
+              "active": true,
+              "displayName": "Klokkeslett"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fakt_strompris_time"
+                    }
+                  },
+                  "Property": "Snittpris øre"
+                }
+              },
+              "queryRef": "fakt_strompris_time.Snittpris øre",
+              "nativeQueryRef": "Snittpris øre"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "dim_time"
+                  }
+                },
+                "Property": "time_tekst"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Snittpris per time i døgnet (øre/kWh)'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
